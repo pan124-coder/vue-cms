@@ -14,9 +14,9 @@ export default defineConfig({
     extensions: ['.js', '.ts', '.vue', '.json', '.css']
   },
   // 强制预构建，让Rolldown识别第三方包
-  optimizeDeps: {
-    include: ['@wangeditor/editor']
-  },
+  // optimizeDeps: {
+  //   include: ['@wangeditor/editor']
+  //},
   build: {
     rollupOptions: {
       // 不要外部化该依赖，需要打包进产物

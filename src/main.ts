@@ -33,8 +33,6 @@ import router from './router'
 import { createPinia } from 'pinia'
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 import { permissionDirective } from './directives/permission.ts'
-import '@wangeditor/editor'
-import '@wangeditor/editor/dist/css/style.css'
 const app = createApp(App)
 
 const pinia = createPinia()

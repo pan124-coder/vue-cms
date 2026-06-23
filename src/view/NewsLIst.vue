@@ -2,7 +2,9 @@
 import {onMounted} from "vue";
 import {auditPass, auditReject, deletenews, type newsData, newsList, saveNews, updateNews, getNewsById, type NewsList} from "@/http/news.ts";
 import {onBeforeUnmount, ref, shallowRef} from 'vue'
-
+//import '@wangeditor/editor/dist/css/style.css';
+// @ts-ignore - 类型声明文件解析问题
+//import {Editor, Toolbar} from '@wangeditor/editor-for-vue';
 const getStatusText = (status: string) => {
   switch(status) {
     case 'PENDING_REVIEW': return '待审核';
@@ -196,14 +198,14 @@ const handlsaveNews = async () => {
   }
 }
 
-editorConfig.MENU_CONF['uploadImage'] = {
-  server: 'http://106.55.59.209:8081/api/news/uploadImg',
-  fieldName: 'your-custom-name',
-  maxFileSize: 20 * 1024 * 1024,
-  maxNumberOfFiles: 5,
-  allowedFileTypes: ['image/*'],
-  timeout: 5 * 1000,
-}
+// editorConfig.MENU_CONF['uploadImage'] = {
+//   server: 'http://106.55.59.209:8081/api/news/uploadImg',
+//   fieldName: 'your-custom-name',
+//   maxFileSize: 20 * 1024 * 1024,
+//   maxNumberOfFiles: 5,
+//   allowedFileTypes: ['image/*'],
+//   timeout: 5 * 1000,
+// }
 </script>
 
 <template>
@@ -273,21 +275,21 @@ editorConfig.MENU_CONF['uploadImage'] = {
             供稿：<input type="text" v-model="newssuplier">
             审核：<input type="text" v-model="newsreviewer">
           </div>
-          <div style="border: 1px solid #ccc;height: 600px;">
-            <Toolbar
-                style="border-bottom: 1px solid #ccc"
-                :editor="editorRef"
-                :defaultConfig="toolbarConfig"
-                :mode="mode"
-            />
-            <Editor
-                style="height: 500px;"
-                v-model="valueHtml"
-                :defaultConfig="editorConfig"
-                :mode="mode"
-                @onCreated="handleCreated"
-            />
-          </div>
+<!--          <div style="border: 1px solid #ccc;height: 600px;">-->
+<!--            <Toolbar-->
+<!--                style="border-bottom: 1px solid #ccc"-->
+<!--                :editor="editorRef"-->
+<!--                :defaultConfig="toolbarConfig"-->
+<!--                :mode="mode"-->
+<!--            />-->
+<!--            <Editor-->
+<!--                style="height: 500px;"-->
+<!--                v-model="valueHtml"-->
+<!--                :defaultConfig="editorConfig"-->
+<!--                :mode="mode"-->
+<!--                @onCreated="handleCreated"-->
+<!--            />-->
+<!--          </div>-->
           <div>
             <button @click="handlsaveNews">保存新闻</button>
           </div>

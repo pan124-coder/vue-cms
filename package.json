@@ -11,7 +11,6 @@
     "type-check": "vue-tsc --build"
   },
   "dependencies": {
-    "@wangeditor/editor": "^5.1.23",
     "@wangeditor/editor-for-vue": "^5.1.12",
     "axios": "^1.15.2",
     "element-plus": "^2.13.7",
