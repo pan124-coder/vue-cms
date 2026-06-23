@@ -2,9 +2,7 @@
 import {onMounted} from "vue";
 import {auditPass, auditReject, deletenews, type newsData, newsList, saveNews, updateNews, getNewsById, type NewsList} from "@/http/news.ts";
 import {onBeforeUnmount, ref, shallowRef} from 'vue'
-//import '@wangeditor/editor/dist/css/style.css';
-// @ts-ignore - 类型声明文件解析问题
-//import {Editor, Toolbar} from '@wangeditor/editor-for-vue';
+
 const getStatusText = (status: string) => {
   switch(status) {
     case 'PENDING_REVIEW': return '待审核';
