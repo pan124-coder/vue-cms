@@ -1,9 +1,7 @@
 <script setup lang="ts">
 import {onMounted} from "vue";
 import {auditPass, auditReject, deletenews, type newsData, newsList, saveNews, updateNews, getNewsById, type NewsList} from "@/http/news.ts";
-import '@wangeditor/editor/dist/css/style.css'
 import {onBeforeUnmount, ref, shallowRef} from 'vue'
-import {Editor, Toolbar} from '@wangeditor/editor-for-vue';
 
 const getStatusText = (status: string) => {
   switch(status) {
@@ -46,7 +44,7 @@ const openAuthDialog = async (isEdit=false, row?: NewsList) => {
         valueHtml.value = row.content
       }
     } catch (err) {
-      console.error("获取新闻详情失败", err)
+      console.error("a获取新闻详情失败", err)
       valueHtml.value = row.content
     }
   } else {
