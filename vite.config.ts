@@ -13,12 +13,5 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
-    extensions: ['.js', '.ts', '.vue', '.json', '.css']
   },
-  // 关键：强制预构建wangeditor依赖，避免线上裸模块解析失败
-  optimizeDeps: {
-    include: [
-      '@wangeditor/editor'
-    ]
-  }
 })
