@@ -6,7 +6,7 @@
       <!-- 纯原生表单 -->
       <form @submit.prevent="handleSubmit" class="login-form">
         <div class="form-group">
-          <label class="form-label">用户名</label>
+          <label class="form-label">用户名a</label>
           <input
               v-model="form.username"
               type="text"
