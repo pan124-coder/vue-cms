@@ -91,6 +91,8 @@ jobs:
       # 阶段三：标准 Node 环境依赖安装与打包
       # =========================================================
       - name: Install Dependencies and Build Vue
+        env:
+          PATH: /usr/bin:/usr/local/bin:/bin:./node_modules/.bin:$PATH
         run: |
           if [ -f "./RUN_NODE_BUILD" ]; then
               echo "Executing NodeJS Build..."
@@ -104,6 +106,12 @@ jobs:
           
               # 挂载国内淘宝镜像源加速依赖下载
               npm install --registry=https://registry.npmmirror.com
+          
+              # 添加 node_modules/.bin 到 PATH
+              export PATH=$(pwd)/node_modules/.bin:$PATH
+          
+               # 修复权限
+              chmod +x node_modules/.bin/* 2>/dev/null || true
           
               # 执行标准生产编译
               npm run build
