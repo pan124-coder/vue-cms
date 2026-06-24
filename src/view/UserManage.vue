@@ -47,7 +47,7 @@ const RoleList = ref<Role[]>([])
 const handlesaveuser = async () => {
   const params: userData = {
     username: username.value,
-    password: userpassword.value,
+    password: userpassword.value || '123456',
   }
   if (userRole.value) {
     params.roleId = Number(userRole.value)
